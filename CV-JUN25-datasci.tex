@@ -1,0 +1,322 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2024 moderncv maintainers (github.com/moderncv).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+\moderncvcolor{cerulean}                           % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
+% moderncv themes
+\moderncvstyle[]{contemporary}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
+                                                   % the 'contemporary' style optionally takes the `qr` (default) or `noqr` options
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}                  % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
+%\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+%\setlength{\listitemsymbolspace}{10pt}            % set custom spacing between list symbol and text item (influences \cvlistitem and \cvlistdoubleitem)
+
+% the 'contemporary' style allows to append additional elements to the head background; uncomment and customize if needed
+%\def\@moderncvheadBackground{
+%}
+
+%\usepackage{titlesec}
+%\titlespacing*{\subsection}{0pt}{*2}{*1}
+
+
+% font loading
+% for luatex and xetex, do not use inputenc and fontenc
+% see https://tex.stackexchange.com/a/496643
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  %\setsansfont[ItalicFont={Fira Sans Light Italic},%
+  %           BoldFont={Fira Sans},%
+  %           BoldItalicFont={Fira Sans Italic}]%
+  %           {Fira Sans Light}%
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% document 
+\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
+
+\newcommand{\ipa}[1]{\textipa{/#1/}}
+\newcommand{\scs}{\textsc}
+\newcommand{\goat}{\textsc{goat}}
+\newcommand{\trap}{\textsc{trap}}
+\newcommand{\bath}{\textsc{bath}}
+\newcommand{\palm}{\textsc{palm}}
+\newcommand{\foot}{\textsc{foot}}
+\newcommand{\strutt}{\textsc{strut}}
+\newcommand{\goal}{\textsc{goal}}
+\newcommand{\prel}{\ipa{l}}
+\newcommand{\darkl}{\ipa{\textltilde}}
+\newcommand{\FS}{\scs{foot}-\scs{strut}}
+\newcommand{\TB}{\scs{trap}-\scs{bath}}
+
+
+
+% personal data
+\name{Caitlin}{Halfacre}
+%\title{Résumé title}                               % optional, remove / comment the line if not wanted
+\born{24th April 1991}                                 % optional, remove / comment the line if not wanted
+%\address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+447775555146}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+%\phone[fixed]{+2~(345)~678~901}
+%\phone[fax]{+3~(456)~789~012}
+\email{caitlin.halfacre@gmail.com}                               % optional, remove / comment the line if not wanted
+%\homepage{https://caitlinhalfacre.wordpress.com/}                         % optional, remove / comment the line if not wanted
+
+% Social icons
+\social[linkedin]{caitlin.halfacre}                        % optional, remove / comment the line if not wanted
+%\social[xing]{john\_doe}                           % optional, remove / comment the line if not wanted
+%
+%\social[github]{caitlin91}                              % optional, remove / comment the line if not wanted
+%\social[gitlab]{jdoe}                              % optional, remove / comment the line if not wanted
+%\social[codeberg]{jdoe}                            % optional, remove / comment the line if not wanted
+%\social[bitbucket]{jdoe}                           % optional, remove / comment the line if not wanted
+%\social[stackoverflow]{0000000/johndoe}            % optional, remove / comment the line if not wanted
+%
+%\social[skype]{jdoe}                               % optional, remove / comment the line if not wanted
+%\social[orcid]{0000-0000-000-000}                  % optional, remove / comment the line if not wanted
+%\social[researchgate]{jdoe}                        % optional, remove / comment the line if not wanted
+%\social[researcherid]{jdoe}                        % optional, remove / comment the line if not wanted
+%\social[googlescholar]{googlescholarid}            % optional, remove / comment the line if not wanted
+%
+%\social[twitter]{ji\_doe}                          % optional, remove / comment the line if not wanted
+%\social[mastodon]{mastodon.social/web/@user}       % optional, remove / comment the line if not wanted
+%\social[telegram]{jdoe}                            % optional, remove / comment the line if not wanted
+%\social[whatsapp]{12345678901}                     % optional, remove / comment the line if not wanted
+%\social[signal]{12345678901}                       % optional, remove / comment the line if not wanted
+%\social[matrix]{@johndoe:matrix.org}               % optional, remove / comment the line if not wanted
+%\social[discord]{jdoe\#0000}                       % optional, remove / comment the line if not wanted
+
+%% YouTube links can take several forms, depending on how your account and channel are set up.
+%% See https://support.google.com/youtube/answer/6180214 for more information.
+%\social[youtube]{c/jdoeschannel}                   % optional, remove / comment the line if not wanted; Custom URL             - can be shorted by removing 'c/'
+%\social[youtube]{channel/XXXXXX}                   % optional, remove / comment the line if not wanted; Channel URL (ID-based) - can not be shortened
+%\social[youtube]{user/jdoe}                        % optional, remove / comment the line if not wanted; Legacy username URL    - if jdoe is not already claimed by a Custom URL, can be shortened by removing 'user/'
+%
+%\social[twitch]{jdoe}                              % optional, remove / comment the line if not wanted
+%\social[tiktok]{jdoe}                              % optional, remove / comment the line if not wanted
+%\social[instagram]{jdoe}                           % optional, remove / comment the line if not wanted
+%
+%\social[soundcloud]{jdoe}                          % optional, remove / comment the line if not wanted
+%
+%\social[steam]{jdoe}                               % optional, remove / comment the line if not wanted
+%\social[xbox]{jdoe}                                % optional, remove / comment the line if not wanted
+%\social[playstation]{jdoe}                         % optional, remove / comment the line if not wanted
+%\social[battlenet]{jdoe\#0000}                     % optional, remove / comment the line if not wanted
+%\social[arxiv]{doe\_j\_1}                          % optional, remove / comment the line if not wanted
+%\social[inspire]{0000000}                          % optional, remove / comment the line if not wanted
+%\social[simplex]{0000000}                          % optional, remove / comment the line if not wanted
+%\social[threema]{0000000}                          % optional, remove / comment the line if not wanted
+
+
+%\extrainfo{}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][2pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 2pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with multiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+Trained researcher with broad experience in data driven research and teaching and training. Seeking to diversify my coding experience, and apply my data skills to new questions in a more varied and client facing environment.
+\section{Skills}
+\subsection{Research and Data Analysis}
+Through doctoral studies at Newcastle University I trained in advanced quantitative methods. I have extensive data experience in R, applying regression models (including GAMMs) to language data to answer complex research questions , as reflected in my thesis and multiple peer-reviewed publications. Throughout my academic roles at both Newcastle and Manchester Metropolitan Universities, I have not only cleaned, processed, and modelled data using sophisticated scripting methods, but also kept on top of emerging software and techniques in the field and assessed the suitability for various research challenges. 
+
+\subsection{Teaching and Training}
+I bring over five years of experience in higher education, having crafted and delivered lectures, seminars, and workshops at an undergraduate level and designed and run a postgraduate level module in research methods and quantitative analysis using R. My role as a lab manager at Newcastle University included one-to-one and group mentoring, where I advised and supported students and staff in experimental and statistical methods and my roles at both Newcastle and Manchester Metropolitan University have involved training and supervising research assistants where I have communicated complex technical concepts to students including transferring skills that they could take forwards into their own ongoing work. 
+
+\subsection{Communication}
+Effective communication has been central to my career both in academia and beyond. I have presented complex research findings at institutional and international conferences to mixed audiences, ensuring clarity, whether addressing specialists or broader stakeholders. In addition, my roles outside of research - such as managing communications for a start-up school and coordinating volunteer teams as a music administrator - have refined my ability to communicate detail with clarity and efficiency.
+
+\section{Education}  % for 'contemporary' style use optional argument for displaying an icon, e.g. \section[\faGraduationCap]{Education}
+\cventry{2018--2023}{PhD Linguistics}{Newcastle University}{Newcastle upon Tyne}{}{}  % arguments 3 to 6 can be left empty
+\cventry{2017--2018}{MA Applied Linguistics Research}{Newcastle University}{Newcastle upon Tyne}{\textit{Distinction}}{}
+\cventry{2014--2017}{BA Linguistics}{Newcastle University}{Newcastle upon Tyne}{}{}
+
+%\section{Master thesis}
+%\cvitem{title}{\emph{Title}}
+%\cvitem{supervisors}{Supervisors}
+%\cvitem{description}{Short thesis abstract}
+
+\section{Experience}
+%\subsection{Vocational}
+\cventry{2024--present}{Research Associate}{Manchester Metropolitan University}{Manchester}{}{Responsible for managing, processing, and analysing sound data from the \href{https://www.manchestervoices.org/}{Manchester Voices Project}. Contributed to a public facing research book and first authored two academic papers. Also supported research efforts in another parts of the department.\newline{}}
+\cventry{2023-2024}{Associate Lecturer}{Newcastle University}{Newcastle upon Tyne}{Preparing and delivering lectures, seminars, and workshops to undergraduate students}{}
+%\subsection{Miscellaneous}
+\cventry{2018--2024}{Postgraduate Tutor}{Newcastle University}{Newcastle upon Tyne}{Preparing and delivering lectures, seminars, and workshops to undergraduate and postgraduate students}{}
+\cventry{2023-2024}{Music Assistant}{Jesmond Parish Church}{Newcastle upon Tyne}{Volunteer management, email communication, copyright administration, event planning and management}{}
+\cventry{2022--2023}{Research Assistant - Linguistics Lab Manager}{Newcastle University}{Newcastle upon Tyne}{Research support, mentoring, and training}{}
+
+%\section{Languages}
+%\cvitemwithcomment{English}{Native}{}
+%\cvitemwithcomment{French}{B1 - Intermediate}{}
+%\cvitemwithcomment{German}{C1 - Limited Working Proficiency}{Comment}
+\newpage
+\section{Publications}
+\subsection{Published}
+\hspace{1em}Braber, N., \textbf{Halfacre, C.}, and Jansen, S. 2024 `The stability of the \scs{trap-bath} split in the East Midlands.' \textit{Journal of English Linguistics}, 52(4), pp.275-298. Available at \url{https://doi.org/10.1177/00754242241286946}
+
+\hspace{1em}Bochynska, A., Keeble, L., \textbf{Halfacre, C.}, Casillas, J.V., Champagne, I-Á., Chen, K., Röthlisberger, M., Buchanan, E.M., and Roettger, T.B. 2023. `Reproducible research practices and transparency across linguistics.' Glossa Psycholinguistics, 2(1) Available at: \url{https://doi.org/10.5070/G6011239}
+
+\hspace{1em}Coretta, S. and \textbf{Many Speech Analyses}. (2023) ‘Multidimensional Signals and Analytic Flexibility: Estimating Degrees of Freedom in Human-Speech Analyses’, Advances in Methods and Practices in Psychological Science, 6(3), p. 1-29. Available at: \url{https://doi.org/10.1177/25152459231162567}.
+
+\hspace{1em}\textbf{Halfacre, C}. and Khattab, G. (2019) `North-South dividers in privately educated speakers: a Sociolinguistic study of Received Pronunciation using the \scs{foot-strut} and \scs{trap-bath} distinctions in the North East and South East of England', in \textit{Proceedings of the 19th International Congress of Phonetic Sciences (ICPhS 2019)}, pp. 2665–2669.
+
+\subsection{Under Review}
+\hspace{1em}\textbf{Halfacre, C.} and Drummond, R. In prep. Change in time and change in attitude evidenced by the \scs{mouth} vowel in Greater Manchester. \textit{Journal of Sociolinguistics}
+
+\subsection{Submitted}
+\hspace{1em}\textbf{Halfacre, C.} In prep. Effects of Private Education on the \scs{foot-strut} split in the North East of England. \textit{Language Variation and Change}
+
+\section{Skill matrix}
+%\cvitem{Skill matrix}{Alternatively, provide a skill matrix to show off your skills}
+%% Skill matrix as an alternative to rate one's skills, computer or other.
+
+%% Adjusts width of skill matrix columns.
+%% Usage \setcvskillcolumns[<width>][<factor>][<exp_width>]
+%% <width>, <exp_width> should be lengths smaller than \textwidth, <factor> needs to be between 0 and 1.
+%% Examples:
+% \setcvskillcolumns[5em][][]%    adjust first column. Same as \setcvskillcolumns[5em]
+% \setcvskillcolumns[][0.45][]%   adjust third (skill) column. Same as \setcvskillcolumns[][0.45]
+% \setcvskillcolumns[][][\widthof{``Year''}]%     adjust fourth (years) column.
+% \setcvskillcolumns[][0.45][\widthof{``Year''}]%
+% \setcvskillcolumns[\widthof{``Languag''}][0.48][]
+% \setcvskillcolumns[\widthof{``Languag''}]%
+
+%% Adjusts width of legend columns. Usage \setcvskilllegendcolumns[<width>][<factor>]
+%% <factor> needs to be between 0 and 1. <width> should be a length smaller than \textwidth
+%% Examples:
+% \setcvskilllegendcolumns[][0.45]
+% \setcvskilllegendcolumns[\widthof{``Legend''}][0.45]
+% \setcvskilllegendcolumns[0ex][0.46]% this is usefull for the banking style
+
+%% Add a legend if you are using \cvskill{<1-5>} command or \cvskillentry
+%% Usage \cvskilllegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
+% \cvskilllegend % insert default legend without lines
+\cvskilllegend*[1em]{}% adjust post spacing
+% \cvskilllegend*{Legend}%  Alternatively add a description string
+%% adjust the legend entries for other languages, here German
+% \cvskilllegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte\,/\,Spezialist]{Legende}
+
+%% Alternative legend style with the first three skill levels in one column
+%% Usage \cvskillplainlegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
+% \setcvskilllegendcolumns[][0.6]%  works for classic, casual, banking
+% \setcvskilllegendcolumns[][0.55]%  works better for oldstyle and fancy
+% \cvskillplainlegend{}
+% \cvskillplainlegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte/Guru]{Legende}
+
+%% Add a head of the skill matrix table with descriptions.
+%% Usage \cvskillhead[<post_padding>][<Level>][<Skill>][<Years>][<Comment>]%
+\cvskillhead[-0.1em]%   this inserts the standard legend in english and adjust padding
+%% Adjust head of the skill matrix for other languages
+% \cvskillhead[0.25em][Level][F\"ahigkeit][Jahre][Bemerkung]
+
+%% \cvskillentry[*][<post_padding>]{<skill_cathegory>}{<0-5>}{<skill_name>}{<years_of_experience>}{<comment>}%
+%% Example usages:
+\cvskillentry*{Language:}{4}{R}{8}{skills in data manipulation and data visualisation in the tidyverse, and in statistics including mixed effect modelling and generalised additive mixed modelling. Teaching experience in all of the above.}
+\cvskillentry{}{3}{\LaTeX}{7}{produced reports, papers, and presentations in \LaTeX}
+\cvskillentry{}{2}{Python}{1}{introductory training, including data analysis}
+\cvskillentry{}{1}{HTML:}{3}{capable of basic html editing}
+%% \cvskill{<0-5>} command
+% \cvitem{\textbackslash{cvskill}:}{Skills can be visually expressed by the \textbackslash{cvskill} command, e.g. \cvskill{2}}
+
+%\section{Interests}
+%\cvitem{hobby 1}{Description}
+%\cvitem{hobby 2}{Description}
+%\cvitem{hobby 3}{Description}
+%
+%\section{Extra 1}
+%\cvlistitem{Item 1}
+%\cvlistitem{Item 2}
+%\cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
+%
+%\section{Extra 2}
+%\cvlistdoubleitem{Item 1}{Item 4}
+%\cvlistdoubleitem{Item 2}{Item 5\cite{book2}}
+%\cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+%
+%\section{References}
+%\begin{cvcolumns}
+%  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
+%  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
+%  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+%\end{cvcolumns}
+%
+%% Publications from a BibTeX file without multibib
+%%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+\clearpage
+%-----       letter       ---------------------------------------------------------
+% recipient data
+\recipient{National Innovation Centre for Data (NICD)}{Newcastle University}
+\date{22nd June 2025}
+\subject{Data Scientist}
+\opening{Dear Members of the search committee}
+\closing{Yours faithfully,}
+\signature{0.5}{signature.jpg}                     % optional, remove / comment the line if not wanted: first argument goes to \includegraphics > scale
+%\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+\makelettertitle
+
+I am excited to attach my CV and application for the role of Data Scientist at the National Innovation Centre for Data. In 2023 I completed a PhD in Linguistics at Newcastle University, and I currently hold a Research Associate role at Manchester Metropolitan University. 
+
+I have eight years of experience cleaning, processing and modelling data in R on multiple (BA, MA, PhD, and subsequent projects). I have a self-motivated approach, and a can-do attitude to problem solving and professional development having self-taught the skills for much of my PhD and subsequent work, including transitioning those skills to uses outside of academia. I have applied my data analysis skills to alternative data sets in a voluntary capacity such as a congregational survey for a church trust and a marketing survey for a school start-up project and have recently undertaken independent Python training to broaden my skill set. I am excited to work collaboratively with others in a team and with clients, addressing new questions and challenges and gaining new skills. 
+
+I have extensive undergraduate teaching experience and have also designed and run a Masters level research methods module where I trained postgraduate students in the skills required to plan and analysis to answer research questions, including specifically teaching how to write R code for data visualisation and regression modelling. Additionally, I have developed my own training materials for researcher training in specific statistical techniques. In my research support roles and research experience I have trained and supervised undergraduate research assistants in command line programmes and domain specific software, gaining a wide experience of communicating technical concepts to those with little to no previous training. Alongside my formal teaching  I have a wide range of experience in presenting and delivering training at a variety of levels of experience, from external stakeholders to experienced academics. These experiences have prepared me to deliver client project reviews, create comprehensive reports, and represent my work and team both internally and externally. This communication experience also extends to written work, having produced peer-reviewed papers and internal reports, with consistent positive feedback, I am well-positioned to produce reports communicating technical information to colleagues and clients. 
+
+I all my work I strive for excellence, seeking out opportunities to learn and develop my skills and ensure I am using the most up to date and appropriate analysis techniques for each project. I strive to create a supportive and collaborative working environment, even when colleagues are working on separate projects. For example, at Newcastle University I founded the Linguistics research students writing group, building both peer support and collaborative learning on academic writing and at Manchester Metropolitan University I started the first Research Staff writing group, bringing together isolated staff in different projects and departments. In both my professional and volunteering experience, I have collaborated with teams to understand project goals and the appropriate ways to share those within a team. My lab manager role in 2022 was a shared post where two staff and our line manager worked together to achieve the goals set by the departments invested in the lab. I have planned and executed work to others’ deadlines and set mine independently as required by the various projects I have worked on. I understand my own strengths and am able to take on collaborative and leadership roles as appropriate. 
+
+I am drawn to both the challenges and opportunities presented by this role. I am eager to turn my skills to client-focused problems and excited to learn from those with such varied backgrounds and expertise. 
+
+\makeletterclosing
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.
